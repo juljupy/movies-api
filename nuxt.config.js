@@ -1,6 +1,9 @@
 
 export default {
   mode: 'spa',
+  server: {
+    host: '0.0.0.0'
+  },
   /*
   ** Headers of the page
   */
@@ -18,7 +21,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#702459' },
   /*
   ** Global CSS
   */
@@ -28,6 +31,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/axios'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -38,8 +42,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://bootstrap-vue.js.org
-    'bootstrap-vue/nuxt',
+    '@nuxtjs/tailwindcss',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
   ],
@@ -48,6 +51,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: 'https://api.themoviedb.org/3'
   },
   /*
   ** Build configuration
